@@ -1,4 +1,4 @@
-## EYE-Mate-swift-style-guide
+# EYE-Mate-swift-style-guide
 EYE-Mate 구성원들이  Swift 코드를 이해하기 쉽고 명확하게 작성하기 위한 스타일 가이드입니다. 구성원들의 의사결정에 따라 수시로 변경될 수 있습니다.
 
 본 문서에 나와있지 않은 규칙은 아래 문서를 따릅니다.
@@ -6,21 +6,21 @@ EYE-Mate 구성원들이  Swift 코드를 이해하기 쉽고 명확하게 작�
 - [Swift API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/)
 - [SE-0005](https://github.com/apple/swift-evolution/blob/main/proposals/0005-objective-c-name-translation.md)
 
-### 목차
-- [코드 포매팅](#-코드-포매팅-)
+## 목차
+- [코드 포매팅](#코드-포매팅)
   - [1. Import 순서](#1-import-순서)
   - [2. 들여쓰기](#2-들여쓰기)
   - [3. 띄어쓰기](#3-띄어쓰기)
   - [4. 줄 바꿈](#4-줄-바꿈)
   - [5. 소괄호](#5소괄호)
-- [네이밍](#-네이밍-)
+- [네이밍](#네이밍)
   - [0. 명확한 이름](#0-명확한-이름)
   - [1. 클래스와 구조체](#1-클래스와-구조체)
   - [2. 함수](#2-함수)
   - [3. 변수와 상수](#3-변수와-상수)
   - [4. 열거형](#4-열거형)
   - [5. 프로토콜](#5-프로토콜)
-- [코드 스타일](#-코드-스타일-)
+- [코드 스타일](#코드-스타일)
   - [1. General](#1-general)
   - [2. Access Control](#2-access-control)
   - [3. 사용자 지정 연산자](#3-사용자-지정-연산자)
@@ -32,13 +32,13 @@ EYE-Mate 구성원들이  Swift 코드를 이해하기 쉽고 명확하게 작�
   - [9. Array](#9.-array)
   - [10. Error Handling](#10.-error-handling)
   - [11. guard 문 사용](#11.-guard-문-사용)
-- [주석](#-주석-)
-- [프로그래밍 권장사항](#-프로그래밍-권장사항-)
-- [참고 링크](#-참고-링크-)
+- [주석](#주석)
+- [프로그래밍 권장사항](#프로그래밍-권장사항)
+- [참고 링크](#참고-링크)
 
-### [코드 포매팅]
+## 코드 포매팅
 
-#### 1. Import 순서
+### 1. Import 순서
 
 - 내장 프레임워크를 먼저 import하고 빈 줄로 구분해 third-party 프레임워크를 import합니다. 
 
@@ -81,7 +81,7 @@ import UIKit
 
 var view: UIView
 ```
-#### 2. 들여쓰기
+### 2. 들여쓰기
 
 - 들여쓰기는 Xcode에서 제공하는 control(^) + i 를 사용합니다. 
 
@@ -102,7 +102,7 @@ var vaildProductCount: Int {
 }
 ```
 
-#### 3. 띄어쓰기
+### 3. 띄어쓰기
 
 - 클래스 상속, 클래스 프로토콜 채택, 타입 선언, 호출 파라미터, 선언 파라미터, 제네릭 프로토콜 채택, 딕셔너리에서 콜론(:) 사용 시, 오른쪽에만 공백을 하나 둡니다.
 
@@ -235,7 +235,7 @@ numArray
 guard let self = self else { return}
 ```
 
-#### 4. 줄 바꿈
+### 4. 줄 바꿈
 - 빈 줄에는 공백이 포함되지 않도록 하며 모든 파일은 빈 줄로 끝나도록 합니다.
 
 - Xcode 의 Page guide 기준, 120 charactor 을 넘으면 반드시 줄 바꿈 합니다.
@@ -271,7 +271,7 @@ func someMethod()
     // Do something
 }
 ```
-#### 5. 소괄호
+### 5. 소괄호
 - if, switch-case, 파라미터, 후행 클로저 등 불필요한 소괄호는 생략합니다.
 
 ✅ Preferred
@@ -288,8 +288,8 @@ _ = arr.filter() { (num) in num % 2 == 0 }
 ```
 
 
-### [네이밍]
-#### 0. 명확한 이름
+## 네이밍
+### 0. 명확한 이름
 - 가능한 명확하고 모든 의미를 포함하는 이름을 사용합니다.
 
 - 이름이 길어져도 의미가 있는 이름이 타인의 코드를 볼 때 훨씬 빠르고 편합니다.
@@ -311,7 +311,7 @@ let aniDur: CGFloat
 let personImage: UIImageView  // image? imageView?
 let title: UILabel            // String? label?
 ```
-#### 1. 클래스와 구조체
+### 1. 클래스와 구조체
 - 클래스와 구조체의 이름에는 UpperCamelCase를 사용합니다.
 
 - 클래스 이름에는 접두사를 붙이지 않습니다.
@@ -336,7 +336,7 @@ struct someStructure {
 // structure definition goes here
 }
 ```
-#### 2. 함수
+### 2. 함수
 - 함수 이름에는 lowerCamelCase를 사용합니다.
 
 - 함수 이름 앞에는 되도록이면 get을 붙이지 않습니다.
@@ -398,7 +398,7 @@ static func updateShippingAddress() -> Observable<Data> { ... }
 static func modifyShippingAddress() -> Observable<Data> { ... }
 ```
 
-#### 3. 변수와 상수
+### 3. 변수와 상수
 - 변수 이름과 상수 이름에는 lowerCamelCase를 사용합니다.
 
 ✅ Preferred
@@ -410,7 +410,7 @@ let maximumNumberOfLines = 3
 let MaximumNumberOfLines = 3
 let MAX_LINES = 3
 ```
-#### 4. 열거형
+### 4. 열거형
 - enum의 이름에는 UpperCamelCase를 사용합니다.
 
 - enum의 각 case에는 lowerCamelCase를 사용합니다.
@@ -434,7 +434,7 @@ enum result {
   case .Failure
 }
 ```
-#### 5. 프로토콜
+### 5. 프로토콜
 - 프로토콜의 이름은 [애플의 API 디자인 가이드라인](https://www.swift.org/documentation/api-design-guidelines/#naming)을 참고합니다.
 
   - 무엇인가 설명하는 프로토콜은 명사로 읽어야 합니다. (e.g. Collection).
@@ -497,7 +497,7 @@ extension UIViewController:SomeProtocol, AnotherProtocol {
   // doSomething()
 }
 ```
-#### 6. 약어
+### 6. 약어
 - 약어는 모두 대문자로 표기하고, 약어로 시작하는 경우에만 소문자로 표기합니다.
 
 ✅ Preferred
@@ -514,7 +514,7 @@ extension UIViewController:SomeProtocol, AnotherProtocol {
   let websiteUrl: NSURL?
   let URLString: String?
 ```
-#### 7. Delegate
+### 7. Delegate
 - Delegate 메서드는 프로토콜명으로 네임스페이스를 구분합니다. 
 
 ✅ Preferred
@@ -535,9 +535,9 @@ protocol UserCellDelegate {
 }
 ```
 
-### [코드 스타일]
+## 코드 스타일
 
-#### 1. General
+### 1. General
 - 가능한 `var`보다 `let` 을 선호합니다.
 
 - 한 컬렉션에서 다른 컬렉션으로 변환할 때는 반복문보다 `map`, `filter`, `reduce` 등의 구성을 선호합니다. 이러한 방법을 사용할 때는 side effect가 있는 클로저를 사용하지 않도록 주의하세요.
@@ -678,7 +678,7 @@ do {
 
 - 인수를 받지 않고, side effect가 없으며, 일부 객체나 값을 반환하는 함수가 있다면 함수 대신 계산된 프로퍼티를 사용하는 것이 좋습니다.
 
-#### 2. Access Control
+### 2. Access Control
 
 - [Access Control](https://joycestudios.tistory.com/15) 키워드가 필요한 경우 먼저 작성합니다.
 
@@ -720,14 +720,14 @@ let pirateName = "LeChuck"
 
 - `public`과 `open` 중에서 선택할 때는 특정 모듈 외부에서 서브클래싱이 가능한 것을 만들려는 경우 `open`을, 그렇지 않은 경우 `public`을 사용합니다. `internal` 이상의 모든 항목은 `@testable import`을 사용하여 테스트에서 서브클래싱할 수 있으므로 이것이 `open`을 사용할 이유가 되어서는 안 된다는 점에 유의하세요. 일반적으로 라이브러리의 경우 `open`을 조금 더 자유롭게 사용하되, 여러 모듈에서 동시에 변경하기 쉬운 앱과 같은 코드베이스의 모듈에 대해서는 조금 더 보수적으로 사용하는 것이 좋습니다.
 
-#### 3. 사용자 지정 연산자
+### 3. 사용자 지정 연산자
 사용자 지정 연산자보다 named function을 만드는 것이 좋습니다.
 
 사용자 정의 연산자를 도입하려는 경우 다른 구문을 사용하는 대신 새 연산자를 전역 범위에 도입하려는 매우 타당한 이유가 있는지 확인하세요.
 
 새로운 타입(특히 `==`)을 지원하기 위해 기존 연산자를 재정의할 수 있습니다. 하지만 새 정의는 연산자의 의미를 유지해야 합니다. 예를 들어 `==`는 항상 동일성을 테스트하고 boolean을 반환해야 합니다.
 
-#### 4. Switch 문과 Enum
+### 4. Switch 문과 Enum
 - 유한한 가능성의 집합(`enum`)이 있는 switch 문을 사용할 때는 `default` case를 포함하지 마세요. 대신 사용하지 않는 case를 맨 아래에 배치하고 `break` 키워드를 사용하여 실행을 방지하세요. 새로운 `case`가 생성됐을때 인지하지 못한 상태에서 `default`로 처리되지 않고 의도적으로 처리를 지정해 주기 위함입니다.
 
 ✅ Preferred
@@ -787,7 +787,7 @@ func handleDigit(_ digit: Int) throws {
 }
 ```
 
-#### 5. Optional
+### 5. Optional
 - 암시적으로 언래핑된 optional을 사용해야 하는 유일한 경우는 `@IBOutlet`입니다. 다른 모든 경우에는 non-optional 또는 일반 optional 프로퍼티를 사용하는 것이 좋습니다. 프로퍼티가 절대 `nil`이 되지 않는다고 '보장'할 수도 있지만, 안전하고 일관성을 유지하는 것이 좋습니다. 마찬가지로 강제 언래핑을 사용하지 마세요.
 
 - `as!` 나 `try!`를 사용하지 마세요.
@@ -850,7 +850,7 @@ func testWithForcedUnwrap() {
 }
 ```
 
-#### 6. Protocol
+### 6. Protocol
 프로토콜을 구현할 때, 코드를 구성하는 방법에는 두 가지가 있습니다:
 1. 프로토콜 구현을 나머지 코드와 분리하기 위한 `// MARK:` 주석 사용
 2. `class`/`struct` 구현 코드 외부에 있지만 동일한 소스 파일에 있는 extension 사용
@@ -885,7 +885,7 @@ final class MyViewController: UIViewController, UITableViewDataSource, UITableVi
 }
 ```
 
-#### 7. Property
+### 7. Property
 - 읽기 전용의 계산된 프로퍼티를 만드는 경우, 그 주위에 `get {}`를 붙이지 않고 getter를 제공합니다.
 ``` swift
 var computedProperty: String {
@@ -928,7 +928,7 @@ class PirateManager {
     /* ... */
 }
 ```
-#### 8. Closure
+### 8. Closure
 매개변수의 타입이 명확하다면 타입 이름을 생략해도 괜찮지만, 명시하는 것도 괜찮습니다. 때로는 명확한 세부 사항을 추가하여 가독성을 높이고 때로는 반복되는 부분을 제거하여 가독성을 높일 수 있으므로 최선의 판단을 내리고 일관성을 유지하세요.
 ``` swift
 // omitting the type
@@ -972,12 +972,12 @@ doSomething(1.0, success: { (parameter1) in
     print("Failure with \(parameter1)")
 })
 ```  
-#### 9. Array
+### 9. Array
 - 일반적으로 subscript를 사용하여 배열에 직접 액세스하지 마세요. 가능하면 optional이며 충돌을 일으키지 않는 `.first` 또는 `.last`와 같은 접근자를 사용하세요. 가능하면 `for i in 0 ..< items.count`와 같은 구문보다는 `for item in items`와 같은 구문을 사용합니다. 배열 subscript로 직접 액세스해야 하는 경우 적절한 바운드 검사를 수행해야 합니다. `for (index, value) in items.enumerated()`를 사용하여 인덱스와 값을 모두 가져올 수 있습니다.
 
 - 배열을 추가/연결할 때, `+=` 또는 `+` 연산자를 절대 사용하지 마세요. 대신 `.append()` 또는 `.append(contentsOf:)`를 사용하는 것이 Swift의 현재 상태에서는 (적어도 컴파일과 관련해서는) 훨씬 더 성능이 좋습니다. 다른 배열을 기반으로 하는 배열을 선언하고 이를 immutable로 유지하려는 경우, `let myNewArray = arr1 + arr2` 대신` let myNewArray = [arr1, arr2].joined()`를 사용하세요.
 
-#### 10. Error Handling
+### 10. Error Handling
 `myFunction` 함수가 `String`을 반환해야 하지만 어느 시점에서 오류가 발생할 수 있다고 가정해 보겠습니다. 일반적인 접근 방식은 이 함수가 optional `String?`을 반환하도록 하는 것입니다. 여기서 문제가 발생하면 `nil`을 반환합니다.
 ``` swift
 func readFile(named filename: String) -> String? {
@@ -1042,7 +1042,7 @@ func printSomeFile() {
 
 일반적으로 메서드가 '실패'할 수 있고 optional 반환 타입을 사용한다면, 실패의 이유가 즉시 명확하지 않은 경우, 메서드에서 오류를 발생시키는 것이 합리적일 수 있습니다.
 
-#### 11. `guard` 문 사용
+### 11. `guard` 문 사용
 - 일반적으로 `if` 문에 코드를 중첩하는 대신, 적용 가능한 경우 "early return" 전략을 사용하는 것을 선호합니다. 이 사용 사례에 `guard` 문을 사용하면 코드의 가독성을 향상시키는 데 도움이 되는 경우가 많습니다.
 
 ✅ Preferred
@@ -1163,7 +1163,7 @@ guard let thingThree = thingThree else {
     throw Error(message: "Unwrapping thingThree failed.")
 }
 ```
-### [주석]
+## 주석
 - 항상 `//` 뒤에 공백을 둡니다.
 
 - `// MARK: -` 주석은 위로 2개, 아래로 1개의 빈 줄을 둡니다.
@@ -1184,7 +1184,7 @@ class Pirate {
 
 }
 ```
-### [프로그래밍 권장사항]
+## 프로그래밍 권장사항
 - 가능하다면 변수를 정의할 때 함께 초기화하도록 합니다. [Then](https://github.com/devxoul/Then)을 사용하면 초기화와 함께 속성을 지정할 수 있습니다.
 ``` swift
 let label = UILabel().then {
@@ -1427,7 +1427,7 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 }
 ```
 
-### [참고 링크]
+## 참고 링크
 
 https://github.com/StyleShare/swift-style-guide
 
